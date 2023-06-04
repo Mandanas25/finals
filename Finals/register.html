@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  :root{
+    --font-style: 'Nunito Sans', sans-serif;
+  }
+
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body{
+    background: #080C11;
+    font-family: var(--font-style);
+  }
+
+  .login-box{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #242026;
+    box-shadow: 0 15px 25px rgb(143, 124, 236, 1);
+    border-radius: 10px; 
+  }
+
+  .login-box h2{
+    font-size: 40px;
+    text-shadow: 6px 3px 5px rgb(143, 124, 236, 1);
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+
+  .login-box .user-box input{
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  .login-box .user-box label{
+    position: relative;
+    left: 0;
+    top: 60px;
+    pad: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .login-box .user-box input:focus~label,
+  .login-box .user-box input:valid~label{
+    top: -85px;
+    left: 0;
+    color: #8F7CEC;
+    font-size: 12px;
+  }
+
+  button{
+    padding: 10px 20px;
+    color: #CBBDD8;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .4s;
+    letter-spacing: 4px;
+    border: 1px solid #8F7CEC;
+    margin: auto;
+  }
+
+  button:hover{
+    background: #8F7CEC;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #8F7CEC, 0 0 25px #8F7CEC, 0 0 50px #8F7CEC, 0 0 100px #8F7CEC;
+  }
+
+  .button-form{
+    display:flex;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  #register{
+    font-size: 14px;
+    text-decoration: none;
+    color: #CBBDD8;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+  }
+
+  #register a{
+    margin: auto;
+    color: #8F7CEC;
+    text-decoration: none;
+  }
+
+</style>
+
+
+<body>
+  <div class="login-box">
+    <h2>Register</h2>
+    <form name="registration" method="post" action="registration.php">
+    <form>
+      <div class="user-box">
+        <input type="username" name="username" id="username"  placeholder=" ">
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="email" name="username" id="email"  placeholder=" ">
+        <label>Email</label>
+      </div>
+      <div class="user-box">
+        <input type="password" name="password" id="password"  placeholder=" ">
+        <label>Password</label>
+      </div>
+        <div class="button-form">
+         <button>Login</button>
+          <div id="register">Already have an account? <a href="index.html">Login here!</a>
+            
+          </div>
+        </div>
+    </form>
+</body>
+</html>

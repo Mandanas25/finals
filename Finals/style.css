@@ -1,0 +1,229 @@
+body{
+    background-color: #e9e4e4;
+}
+
+
+.container {
+    left: 500px;
+    width: 400px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
+  }
+  
+  .container .slider {
+    width: 200%;
+    position: relative;
+    transition: transform ease-out 0.3s;
+    display: flex;
+  }
+  
+  #register_toggle {
+    display: none;
+  }
+  
+  .container #register_toggle:checked + .slider {
+    transform: translateX(-50%);
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 1.5em 3em;
+    width: 50%;
+  }
+  
+  .title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 3em;
+  }
+  
+  form .form_control {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  form .form_control .label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transition: transform ease 0.2s;
+    transform: translate(0%, -50%);
+    font-size: 1em;
+    user-select: none;
+    pointer-events: none;
+    color: #000000;
+  }
+  
+  form .form_control .input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #000000;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: box-shadow ease 0.2s;
+    box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
+  }
+  
+  form .form_control .input:focus,
+  form .form_control .input:valid {
+    box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 3px 3px 4px #0e0e0e, inset -3px -3px 4px #5f5e5e;
+  }
+  
+  form .form_control .input:focus + .label,
+  form .form_control .input:valid + .label {
+    transform: translate(-150%, -50%);
+  }
+  
+  form button {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #000000;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: box-shadow ease 0.1s;
+    box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
+  }
+  
+  form button:active {
+    box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 3px 3px 4px #0e0e0e, inset -3px -3px 4px #5f5e5e;
+  }
+  
+
+
+  .bottom_text {
+    font-size: 1em;
+  }
+  
+  .bottom_text .swtich {
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .audio-player {
+    top: 90px;
+    left: 550px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 80px;
+    background-color: #0a0a0a;
+    border-radius: 8px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .player-controls {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .song-info {
+    margin-bottom: 4px;
+  }
+  
+  .song-title {
+    font-size: 16px;
+    color: #fff6f6;
+    margin: 0;
+  }
+  
+  .artist {
+    font-size: 12px;
+    color: #fffdfd;
+    margin: 0;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #ddd;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    width: 0;
+    height: 100%;
+    background-color: #ff5500;
+    animation: progress-animation 10s linear infinite;
+  }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .play-btn,
+  .pause-btn,
+  .skip-btn,
+  .volume-btn {
+    font-size: 16px;
+    color: #666;
+    margin-right: 8px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .play-btn:hover,
+  .pause-btn:hover,
+  .skip-btn:hover,
+  .volume-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  .volume-slider {
+    width: 100px;
+    height: 5px;
+    background-color: #ccc;
+    position: relative;
+    margin-left: 10px;
+  }
+  
+  .volume-slider-bar {
+    height: 100%;
+    background-color: #666;
+  }
+  
+  .volume-slider-handle {
+    width: 16px;
+    height: 16px;
+    background-color: #666;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  @keyframes progress-animation {
+    0% {
+      width: 0;
+    }
+  
+    100% {
+      width: 100%;
+    }
+  }
+  

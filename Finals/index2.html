@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #1f1d36;
+        }
+        
+        .nav-menu:before,
+        .nav-menu:after{
+            content: " ";
+            display: table;
+        }
+
+        .nav-menu:after{
+            clear: both;
+        }
+        .nav-menu{
+            *zoom: 1;
+        }
+
+        nav{
+            padding: 100px;
+            
+        }
+
+        .menu,
+        .submenu{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .menu{
+            margin: 50px auto;
+            width: 800px;
+            width: -moz-fit-content;
+            width: -webkit-fit-content;
+            width: fit-content;
+        }
+
+        .menu > li{
+            background: #000;
+            float:left;
+            position: relative;
+            transform: skewX(25deg);
+            padding: 5px;
+            bottom:70px;
+           
+        }
+
+        .menu a {
+            display: block;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        .menu li:hover{
+            background: #e74c3c;
+        }
+        
+        .menu-item{
+            position: absolute;
+            width: 200px;
+            left: 50%; margin-left: -100px;
+            transform: skewX(-25deg);
+            transform-origin: left top;
+        }
+
+        .menu-item li{
+            background-color: #34495e;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item > li > a{
+            padding: 1em 2em;
+        }
+
+        .menu-item > li::after{
+            content: ' ';
+            position: absolute;
+            top: -125%;
+            height: 100%;
+            width: 100%;
+            box-shadow: 0 0 50px rgb(0,0,0,.9);
+        }
+
+        .menu-item > li:nth-child(odd){
+            transform: skewX(-25deg) translateX(0);
+        }
+        
+        .menu-item > li:nth-child(odd) > a{
+            transform: skewX(25deg);
+        }
+
+        .menu-item > li:nth-child(odd)::after{
+            right: -50%;
+            transform: skewX(25deg) translateX(0);
+        }
+
+        .menu-item > li:nth-child(even){
+            transform: skewX(25deg) translateX(0);
+        }
+
+        .menu-item > li:nth-child(even) > a {
+            transform: skewX(-25deg);
+        }
+
+        .menu-item > li:nth-child(even)::after{
+            left: -50%;
+            transform: skewX(25deg) rotate(3deg);
+        }
+
+        .menu-item,
+        .menu-item li{
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .menu-item li{
+            transition: .2s ease transform;
+        }
+
+        .menu > li:hover .menu-item,
+        .menu > li:hover .menu-item li{
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu >li:hover .menu-item li:nth-child(even){
+            transform: skewX(25deg) translateX(15px);
+        }
+
+        .menu >li:hover .menu-item li:nth-child(odd){
+            transform: skewX(-25deg) translateX(-15px);
+        }
+
+</style>
+
+
+
+
+
+<body>
+    <nav>
+        <ul class="menu nav-menu">
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Service</a>
+                <ul class="menu-item">
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Grapics Design</a></li>
+                    <li><a href="#">App Development</a></li>
+                    <li><a href="#">Marketing</a></li>
+                </ul>
+            </li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact us</a></li> 
+        </ul>
+    </nav>
+    
+</body>
+</html>
